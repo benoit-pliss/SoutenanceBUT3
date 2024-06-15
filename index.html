@@ -1,68 +1,157 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>reveal.js</title>
 
-		<title>reveal.js</title>
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/moon.css">
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Présentation</section>
-				<section>
-					<section>Introduction à l'entreprise et aux missions</section>
-					<section>Présentation de l'entreprise</section>
-					<section>Détail des missions</section>
-					<section>Objectif de l'alternance</section>
-				</section>
-				<section>
-					<section>Compétence 1 - Réaliser</section>
-					<section>Avant l'alternance : Mes compétences initiales</section>
-					<section>Développement de l'application ERP : Progression des compétences</section>
-					<section>Mise en production : Evolution des compétences</section>
-					<section>Améliorations pour l'avenir</section>
-				</section>
-				<section>
-					<section>Compétence 2 - Optimiser</section>
-					<section>Introduction</section>
-					<section>Description initiale du problème</section>
-					<section>Processus d'optimisation</section>
-					<section>Résultats obtenus</section>
-					<section>Conclusion</section>
-				</section>
-				<section>
-					<section>Compétence 6 - Collaborer</section>
-					<section>Introduction</section>
-					<section>Objectifs du projet ERP</section>
-					<section>Processus de conduite du changement</section>
-					<section>Résultats obtenus et retour d'expérience</section>
-					<section>Conclusion</section>
-				</section>
-			</div>
-		</div>
+	<style>
+		pre code {
+			white-space: pre-wrap;
+			word-wrap: break-word;
+			font-size: 14px;
+		}
+		/* Custom class to hide elements */
+		.hidden-fragment {
+			visibility: hidden;
+		}
+	</style>
+</head>
+<body>
+<div class="reveal">
+	<div class="slides">
+		<section>
+			<a href="https://revealjs.com">
+				<img style="border-radius: 15px" src="https://www.lepetitvapoteur.com/img/cms/images/Site/CMS/90/pres-2.jpg" alt="lpv-banner" style="height: 180px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
+			</a>
+			<h3>Soutenance d’activité</h3>
+			<p>
+				<small>Présenté par <a href="http://hakim.se">Benoit PLISSONNIER</a></small>
+			</p>
+		</section>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+		<section>
+			<section data-background="https://saint-sebastien.com/wp-content/uploads/2020/09/vapoteur-fiche-boutique-1024x608.jpg">
+				<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
+					<h4>Introduction à l'entreprise et aux missions</h4>
+				</div>
+			</section>
+			<section data-background="https://saint-sebastien.com/wp-content/uploads/2020/09/vapoteur-fiche-boutique-1024x608.jpg">
+				<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
+					<h4>Présentation de l'entreprise</h4>
+				</div>
+			</section>
+			<section data-background-iframe="https://bo-prod.lepetitvapoteur.com">
+				<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
+					<h4>Détail des missions</h4>
+				</div>
+			</section>
+			<section>
+				<h2>Ligne chronologique de l'entreprise</h2>
+				<ul>
+					<li class="fragment">1990: Fondation de l'entreprise</li>
+					<li class="fragment">2000: Lancement du premier produit</li>
+					<li class="fragment">2010: Expansion internationale</li>
+					<li class="fragment">2020: Lancement du service en ligne</li>
+				</ul>
+			</section>
+		</section>
+		<section>
+			<section>Compétence 1 - Réaliser</section>
+			<section>Avant l'alternance : Mes compétences initiales</section>
+			<section>Développement de l'application ERP : Progression des compétences</section>
+			<section>Mise en production : Evolution des compétences</section>
+			<section>Améliorations pour l'avenir</section>
+		</section>
+		<section>
+			<section>Compétence 2 - Optimiser</section>
+			<section>Introduction</section>
+			<section>Description initiale du problème</section>
+			<section data-auto-animate>
+				<h2 data-id="code-title">With Animations</h2>
+				<pre data-id="code-animation"><code class="hljs sql" data-trim data-line-numbers="|5-9|18-19,26|32-41">
+						SELECT p.id_product, p.id_product_attribute, pp.nom
+						FROM erp_produit_prod_presta p
+							INNER JOIN erp_produit_prod pp ON (p.id_produit_prod = pp.id_produit_prod)
+							INNER JOIN od_order_detail od ON (od.id_order IN
+							(
+								SELECT id_order
+								FROM od_orders
+								WHERE invoice_date BETWEEN :date_debut AND :date_fin
+							)
+							   AND p.id_product_attribute = od.product_attribute_id AND p.id_product = od.product_id )
+							INNER JOIN od_orders o ON (o.id_order = od.id_order)
+							LEFT JOIN od_order_grossiste_data ogd ON (o.id_order = ogd.id_order) AND ogd.id_order IS NULL
+						WHERE o.invoice_number != 0
+						GROUP BY p.id_product, p.id_product_attribute;
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+						SELECT od.product_id as id_product, od.product_attribute_id as id_product_attribute, pp.nom
+						FROM od_order_detail od
+							INNER JOIN od_orders o ON (o.id_order = od.id_order)
+							AND o.invoice_date BETWEEN :date_debut AND :date_fin
+							LEFT JOIN od_order_grossiste_data ogd ON (o.id_order = ogd.id_order)
+							AND ogd.id_order IS NULL
+							INNER JOIN erp_produit_prod_presta p ON (od.product_id = p.id_product
+							AND od.product_attribute_id = p.id_product_attribute)
+							INNER JOIN erp_produit_prod pp ON (p.id_produit_prod = pp.id_produit_prod)
+						WHERE o.invoice_number != 0
+						AND od.product_id IN (" . implode(',', $this->liste_id_product_produit_prod) . ")
+						GROUP BY od.product_id, od.product_attribute_id;
+
+					SELECT eppp.id_product, eppp.id_product_attribute, epp.nom, vente.res
+						FROM erp_produit_prod_presta eppp
+						JOIN erp_produit_prod epp ON eppp.id_produit_prod = epp.id_produit_prod
+						JOIN
+						(SELECT od.product_id, od.product_attribute_id, IFNULL(SUM(od.product_quantity),0) as res
+						 FROM od_order_detail od
+						 LEFT JOIN od_orders o ON (o.id_order = od.id_order)
+						 LEFT JOIN od_order_grossiste_data ogd ON (o.id_order = ogd.id_order)
+						 WHERE IFNULL(o.invoice_number,0) != 0
+						 AND ogd.id_order IS NULL
+						 AND od.product_id IN (". implode(',', $this->liste_id_product_produit_prod) .")
+						 AND o.date_add BETWEEN :date_debut AND :date_fin
+						 GROUP BY od.product_id, od.product_attribute_id)
+						 vente ON vente.product_id = eppp.id_product
+						ORDER BY res desc;
+				</code></pre>
+			</section>
+			<section>Processus d'optimisation</section>
+
+
+
+			<section>Résultats obtenus</section>
+			<section>Conclusion</section>
+		</section>
+		<section>
+			<section>Compétence 6 - Collaborer</section>
+			<section>Introduction</section>
+			<section>Objectifs du projet ERP</section>
+			<section>Processus de conduite du changement</section>
+			<section>Résultats obtenus et retour d'expérience</section>
+			<section>Conclusion</section>
+		</section>
+	</div>
+</div>
+
+<script src="dist/reveal.js"></script>
+<script src="plugin/notes/notes.js"></script>
+<script src="plugin/markdown/markdown.js"></script>
+<script src="plugin/highlight/highlight.js"></script>
+<script>
+	Reveal.initialize({
+		hash: true,
+		slideNumber: true,
+
+		// Learn about plugins: https://revealjs.com/plugins/
+		plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+	});
+</script>
+</body>
 </html>
