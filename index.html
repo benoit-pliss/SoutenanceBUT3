@@ -1,191 +1,274 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<title>reveal.js</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>reveal.js</title>
 
-	<link rel="stylesheet" href="dist/reset.css">
-	<link rel="stylesheet" href="dist/reveal.css">
-	<link rel="stylesheet" href="dist/theme/moon.css">
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/moon.css">
 
-	<!-- Theme used for syntax highlighted code -->
-	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
 
-	<style>
-		.columns {
-			display: flex;
-			align-items: center;
-		}
-		.column {
-			flex: 1;
-			margin: 10px;
-		}
-		@keyframes fadeIn {
-			from { opacity: 0; }
-			to { opacity: 1; }
-		}
+    <style>
+        .columns {
+            display: flex;
+            align-items: center;
+        }
 
-		pre code {
-			white-space: pre-wrap;
-			word-wrap: break-word;
-			font-size: 14px;
-		}
-		/* Custom class to hide elements */
-		.hidden-fragment {
-			visibility: hidden;
-		}
+        .column {
+            flex: 1;
+            margin: 10px;
+        }
 
-		p, li{
-			font-size: 0.6em;
-		}
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
 
-		h1{
-			font-size: 12px;
-		}
-	</style>
+        .timeline {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .timeline-event {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .bubble {
+            background: #f9f9f9;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .timeline-arrow img {
+            transform: rotate(90deg);
+        }
+
+        pre code {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-size: 14px;
+        }
+
+        /* Custom class to hide elements */
+        .hidden-fragment {
+            visibility: hidden;
+        }
+
+        p, li {
+            font-size: 0.6em;
+        }
+
+        h1 {
+            font-size: 12px;
+        }
+    </style>
 </head>
 <body>
 <div class="reveal">
-	<div class="slides">
-		<section>
-			<a href="/">
-				<img style="border-radius: 15px" src="https://www.lepetitvapoteur.com/img/cms/images/Site/CMS/90/pres-2.jpg" alt="lpv-banner" style="height: 180px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
-			</a>
-			<h3>Soutenance d’activité</h3>
-			<p>
-				<small>Présenté par <a href="http://hakim.se">Benoit PLISSONNIER</a></small>
-			</p>
-		</section>
+    <div class="slides">
+        <section>
+            <a href="/">
+                <img style="border-radius: 15px"
+                     src="https://www.lepetitvapoteur.com/img/cms/images/Site/CMS/90/pres-2.jpg" alt="lpv-banner"
+                     style="height: 180px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
+            </a>
+            <h3>Soutenance d’activité</h3>
+            <p>
+                <small>Présenté par <a href="http://hakim.se">Benoit PLISSONNIER</a></small>
+            </p>
+        </section>
 
-		<section>
-			<section data-background="https://saint-sebastien.com/wp-content/uploads/2020/09/vapoteur-fiche-boutique-1024x608.jpg">
-				<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-					<h4>Introduction à l'entreprise et aux missions</h4>
-				</div>
-			</section>
-			<section data-background="https://saint-sebastien.com/wp-content/uploads/2020/09/vapoteur-fiche-boutique-1024x608.jpg">
-				<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-					<h4>Présentation de l'entreprise</h4>
-					<p>Fondé en 2010, située en Normandie, à Cherbourg</p>
-					<p>Leader européen dans la vente de cigarette électronique et de e-liquide</p>
-					<h5>LPV en chiffre :</h5>
-					<ul>
-						<li>15% à 20% de croissance par an</li>
-						<li>Plus de 7000 commande par jour</li>
-						<li>2,4 millions de clients</li>
-						<li>81 magasins en décembre 2023</li>
-					</ul>
-				</div>
-			</section>
-			<section data-background-iframe="https://bo-prod.lepetitvapoteur.com">
-				<div style="margin-bottom : 20px; background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-					<h4>Détail des missions</h4>
-				</div>
-				<div class="fragment" data-fragment-index="1" style="margin-bottom : 20px; background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-					<ul>
-						<li class="fragment"  data-fragment-index="1">
-							Objectif de développement d’une application ERP pour le service de production
-						</li>
-						<li class="fragment" data-fragment-index="2">
-							Remplacement des systèmes existants basés sur Excel pour améliorer l’efficacité et réduire les erreurs
-						</li>
-						<li class="fragment" data-fragment-index="3">
-							Technologies utilisées : Angular et CakePhp
-						</li>
-					</ul>
-				</div>
-				<div class="fragment" style="display: flex; gap: 30px; justify-content: center" data-fragment-index="3">
-					<img width="140" height="140" src="data:image/png;base64,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" alt="logo-angular">
-					<img width="140" height="140" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxASEhAQEBIVFRUVGRYVFxUVFhUVFhIVFRYWFxUXExYYHywgJBolGxcWITEhJSkrLi4uGB8zODMtNygtLisBCgoKDg0OGxAQGzcjICUrLS0tLSstLS8tLS0tLS0uLS0vLS0uLS01LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAMgA/AMBEQACEQEDEQH/xAAcAAEAAwADAQEAAAAAAAAAAAAABQYHAgMEAQj/xABEEAACAQMABwMIBwQJBQAAAAABAgADBBEFBgcSITFBE1FhIjJxcoGRsbIzNEJSYnOhkqLB0RYXI0NTgoOj0hQkNVTw/8QAGgEBAAIDAQAAAAAAAAAAAAAAAAMEAQIFBv/EADIRAQACAQIDBQYGAwEBAAAAAAABAgMEEQUhMRIyQVFxEyI0gZHRM1JhobHBFULh8BT/2gAMAwEAAhEDEQA/ANxgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHzMD7AQEBAQEBmAgICAgICAgICAgICAgICAgICAgICAgcXcAEk4A5k8hBtM8oVPTGvttSJWkDWYfdO6ntc/wBkNs1Y6Orp+E5skb292P3+iq3uv94+dwJTHgN4+9pDOe09HSx8HwV728oe41ivX864q/wCViny4mk3tPiu10enr0pH0+7wVbio3nO7eszN8TMbynilY6REfJ0bg7hMbt+1Pm7EYr5pI9BxG7WY7XV66GlrlPMr1R/qNj3ZxM9qfNFbT4rd6sfSEpaa6X6f3u+O51B+E3jLaPFVycM01/wDXb0WHRm0jiBcUcD79M596H+fsklc/nChl4L44rfKfuuujNK0Lhd+i4Ydcc18GHMSetono4+bBkw27N42e2bISAgICAgICAgICAgICAgICAgICAgZ/tTv6i9jQU4RwzNj7WCAAfDrK+e09Hd4LhrPayT1jozuVXoCAgICAgICAgSGgb6pQr0qlM4O8qnuZSQCD4TelprO8INVirlxTW0NzWX3iX2AgICAg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iRxxnoJpXHN45L2p1+PTWit4nmmaGzi4J8utTUfhDMfdw+M3jBPmpW41iiPdrMrtq9q9QtFIp5LHznbG838h4SelIpHJxtVq8motvbp5ILap9Wo/mj5Hkefur3Bfxren9wr2zrRtGvVrLWphwEBAbod6R4YiZnd0OLZsmKlZpO3Nff6K2H/rU/dJ/ZU8nC/+/UfnlnOv1jSo3QSigRdxTgcsktkytmiItyeh4Xlvkwdq87zvK7bNvqKeu/zSxh7rjcW+Jn0hUtp31sflr8WkOfvOrwf4f5y8WhNULi6pCtTamFJI8onOQcHkJrTFNo3hLqOJYsGTsWid0va7N6xI7Wuij8IZj7M4E3jBPiq343SI9ysrzoPQlG1Ts6I58WY8Wc97GWKVivRxNRqcmot2rpObK5AQPhgZFrrs0qB2r2C7yHiaPJkPXs88Cvh0gUEV7q0JUPWtyeYzUo59I4ZmR3Wmjb29cFErV2PDfbebHpqNwHvmBsezrU97BHerU3qlXG8in+zQD4t4+zxgZ/tD1PuKFxWr06bVKNRjU3kUt2ZY5YOBxHHJzy49IDRWvGmHVbagO0YDdBFLecDkMnl7TAgtOaDvkruK9OpUqHDOwV3BLAMfKAwSM9IG46noV0baKwIIoICCCCDu8iD1gYTonRlwK1AmhVAFSnx7N+HljriZG765avrfWz0TgOPKpt91xy9h5H0zAxPQJvrG6SstvW3qbFXXs3Idc4dcgcQeh7wIGw60aCp6UtE3SUfAqUmZSCrEcVdTxweR7oGPVbXSWi6pbFSieW+ozTcetjdI9MBcaY0npLFHfq11P2EXyCem9ujH7XCBs2oWjLu3tVp3lTeYeavM0k6IX6/w5QK9tRt6j1bbcRmwj53VLY8peeJWzxzh6Dgt61pftTtzjx/SUlsyostCqHVlPacmBU+aO+bYI2hW4xatstdp35f2ucncggU3afRdrekEVmPag4UEnzH7pDn7rr8HtWuW287cv7hE7L7eolauXR1yi43lZc+V0yJpgiYmVrjN62x17M78/P8ARo5ll55l20e1qNdgpTdh2ajKqxHNuoEq5o956bhGStcG0zEc5WzZ3SZbJAylTvPwYEHn3GS4e65XFbROomYnflCqbSLao12ClN2G4oyqsRnJ7hIs0TNnU4RelcE7ztzWrZ1TZbNAylTv1ODAg+dw4GS4e5zczitotqZmJ8IWeSuaQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQP/Z" alt="logo-cake">
-				</div>
-			</section>
-		</section>
-		<section>
-			<section>
-				<h1 style="font-size: 2em">
-					Compétence 1 : Réaliser
-				</h1>
+        <section>
+            <section
+                    data-background="https://saint-sebastien.com/wp-content/uploads/2020/09/vapoteur-fiche-boutique-1024x608.jpg">
+                <div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
+                    <h4>Introduction à l'entreprise et aux missions</h4>
+                </div>
+            </section>
+            <section
+                    data-background="https://saint-sebastien.com/wp-content/uploads/2020/09/vapoteur-fiche-boutique-1024x608.jpg">
+                <div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
+                    <h4>Présentation de l'entreprise</h4>
+                    <p>Fondé en 2010, située en Normandie, à Cherbourg</p>
+                    <p>Leader européen dans la vente de cigarette électronique et de e-liquide</p>
+                    <h5>LPV en chiffre :</h5>
+                    <ul>
+                        <li>15% à 20% de croissance par an</li>
+                        <li>Plus de 7000 commande par jour</li>
+                        <li>2,4 millions de clients</li>
+                        <li>81 magasins en décembre 2023</li>
+                    </ul>
+                </div>
+            </section>
+            <section data-background-iframe="https://bo-prod.lepetitvapoteur.com">
+                <div style="margin-bottom : 20px; background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
+                    <h4>Détail des missions</h4>
+                </div>
+                <div class="fragment" data-fragment-index="1"
+                     style="margin-bottom : 20px; background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
+                    <ul>
+                        <li class="fragment" data-fragment-index="1">
+                            Objectif de développement d’une application ERP pour le service de production
+                        </li>
+                        <li class="fragment" data-fragment-index="2">
+                            Remplacement des systèmes existants basés sur Excel pour améliorer l’efficacité et réduire
+                            les erreurs
+                        </li>
+                        <li class="fragment" data-fragment-index="3">
+                            Technologies utilisées : Angular et CakePhp
+                        </li>
+                    </ul>
+                </div>
+                <div class="fragment" style="display: flex; gap: 30px; justify-content: center" data-fragment-index="3">
+                    <img width="140" height="140"
+                         src="data:image/png;base64,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"
+                         alt="logo-angular">
+                    <img width="140" height="140"
+                         src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxASEhAQEBIVFRUVGRYVFxUVFhUVFhIVFRYWFxUXExYYHywgJBolGxcWITEhJSkrLi4uGB8zODMtNygtLisBCgoKDg0OGxAQGzcjICUrLS0tLSstLS8tLS0tLS0uLS0vLS0uLS01LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAMgA/AMBEQACEQEDEQH/xAAcAAEAAwADAQEAAAAAAAAAAAAABQYHAgMEAQj/xABEEAACAQMABwMIBwQJBQAAAAABAgADBBEFBgcSITFBE1FhIjJxcoGRsbIzNEJSYnOhkqLB0RYXI0NTgoOj0hQkNVTw/8QAGgEBAAIDAQAAAAAAAAAAAAAAAAMEAQIFBv/EADIRAQACAQIDBQYGAwEBAAAAAAABAgMEEQUhMRIyQVFxEyI0gZHRM1JhobHBFULh8BT/2gAMAwEAAhEDEQA/ANxgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHzMD7AQEBAQEBmAgICAgICAgICAgICAgICAgICAgICAgcXcAEk4A5k8hBtM8oVPTGvttSJWkDWYfdO6ntc/wBkNs1Y6Orp+E5skb292P3+iq3uv94+dwJTHgN4+9pDOe09HSx8HwV728oe41ivX864q/wCViny4mk3tPiu10enr0pH0+7wVbio3nO7eszN8TMbynilY6REfJ0bg7hMbt+1Pm7EYr5pI9BxG7WY7XV66GlrlPMr1R/qNj3ZxM9qfNFbT4rd6sfSEpaa6X6f3u+O51B+E3jLaPFVycM01/wDXb0WHRm0jiBcUcD79M596H+fsklc/nChl4L44rfKfuuujNK0Lhd+i4Ydcc18GHMSetono4+bBkw27N42e2bISAgICAgICAgICAgICAgICAgICAgZ/tTv6i9jQU4RwzNj7WCAAfDrK+e09Hd4LhrPayT1jozuVXoCAgICAgICAgSGgb6pQr0qlM4O8qnuZSQCD4TelprO8INVirlxTW0NzWX3iX2AgICAg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iRxxnoJpXHN45L2p1+PTWit4nmmaGzi4J8utTUfhDMfdw+M3jBPmpW41iiPdrMrtq9q9QtFIp5LHznbG838h4SelIpHJxtVq8motvbp5ILap9Wo/mj5Hkefur3Bfxren9wr2zrRtGvVrLWphwEBAbod6R4YiZnd0OLZsmKlZpO3Nff6K2H/rU/dJ/ZU8nC/+/UfnlnOv1jSo3QSigRdxTgcsktkytmiItyeh4Xlvkwdq87zvK7bNvqKeu/zSxh7rjcW+Jn0hUtp31sflr8WkOfvOrwf4f5y8WhNULi6pCtTamFJI8onOQcHkJrTFNo3hLqOJYsGTsWid0va7N6xI7Wuij8IZj7M4E3jBPiq343SI9ysrzoPQlG1Ts6I58WY8Wc97GWKVivRxNRqcmot2rpObK5AQPhgZFrrs0qB2r2C7yHiaPJkPXs88Cvh0gUEV7q0JUPWtyeYzUo59I4ZmR3Wmjb29cFErV2PDfbebHpqNwHvmBsezrU97BHerU3qlXG8in+zQD4t4+zxgZ/tD1PuKFxWr06bVKNRjU3kUt2ZY5YOBxHHJzy49IDRWvGmHVbagO0YDdBFLecDkMnl7TAgtOaDvkruK9OpUqHDOwV3BLAMfKAwSM9IG46noV0baKwIIoICCCCDu8iD1gYTonRlwK1AmhVAFSnx7N+HljriZG765avrfWz0TgOPKpt91xy9h5H0zAxPQJvrG6SstvW3qbFXXs3Idc4dcgcQeh7wIGw60aCp6UtE3SUfAqUmZSCrEcVdTxweR7oGPVbXSWi6pbFSieW+ozTcetjdI9MBcaY0npLFHfq11P2EXyCem9ujH7XCBs2oWjLu3tVp3lTeYeavM0k6IX6/w5QK9tRt6j1bbcRmwj53VLY8peeJWzxzh6Dgt61pftTtzjx/SUlsyostCqHVlPacmBU+aO+bYI2hW4xatstdp35f2ucncggU3afRdrekEVmPag4UEnzH7pDn7rr8HtWuW287cv7hE7L7eolauXR1yi43lZc+V0yJpgiYmVrjN62x17M78/P8ARo5ll55l20e1qNdgpTdh2ajKqxHNuoEq5o956bhGStcG0zEc5WzZ3SZbJAylTvPwYEHn3GS4e65XFbROomYnflCqbSLao12ClN2G4oyqsRnJ7hIs0TNnU4RelcE7ztzWrZ1TZbNAylTv1ODAg+dw4GS4e5zczitotqZmJ8IWeSuaQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQP/Z"
+                         alt="logo-cake">
+                </div>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h1 style="font-size: 2em">
+                    Compétence 1 : Réaliser
+                </h1>
 
-				<h2 style="font-size: 1em">
-					Niveau 3 : Adapter des applications sur un ensemble de supports (embarqué, web, mobile, IoT...)
-				</h2>
+                <h2 style="font-size: 1em">
+                    Niveau 3 : Adapter des applications sur un ensemble de supports (embarqué, web, mobile, IoT...)
+                </h2>
 
-				<h3 class="fragment" style="font-size: 0.7em; color: #e6792b">
-					AC 3 Intégrer des solutions dans un environnement de production
-				</h3>
-			</section>
+                <h3 class="fragment" style="font-size: 0.7em; color: #e6792b">
+                    AC 3 Intégrer des solutions dans un environnement de production
+                </h3>
+            </section>
 
-			<section>
-				<h2 style="font-size: 1em">Avant l'alternance : Mes compétences initiales</h2>
-				<div class="columns">
-					<div class="column">
-						<ul>
-							<li>Développement web</li>
-							<li>HTML, CSS, PHP</li>
-							<li>Petites applications</li>
-						</ul>
-					</div>
-					<div class="column">
-						<img src="examples/assets/TDFImage.png" alt="">
-						<p style="font-size: 8px">
-							Image de l'application TDF
-						</p>
-					</div>
-				</div>
-			</section>
+            <section>
+                <h2 style="font-size: 1em">Avant l'alternance : Mes compétences initiales</h2>
+                <div class="columns">
+                    <div class="column">
+                        <ul>
+                            <li>Développement web</li>
+                            <li>HTML, CSS, PHP</li>
+                            <li>Petites applications</li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <img src="examples/assets/TDFImage.png" alt="">
+                        <p style="font-size: 8px">
+                            Image de l'application TDF
+                        </p>
+                    </div>
+                </div>
+            </section>
 
-			<section>
-				<h2 style="font-size: 1em">Développement de l'application ERP : Progression des compétences</h2>
-				<div class="columns">
-					<div class="column fragment">
-						<h3 style="font-size: 0.7em;">Processus de développement</h3>
-						<ul>
-							<li style="margin-bottom: 15px;">
-								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="width: 20px; vertical-align: middle; margin-right: 10px;">
-									<path fill="#ffffff" d="M152.1 38.2c9.9 8.9 10.7 24 1.8 33.9l-72 80c-4.4 4.9-10.6 7.8-17.2 7.9s-12.9-2.4-17.6-7L7 113C-2.3 103.6-2.3 88.4 7 79s24.6-9.4 33.9 0l22.1 22.1 55.1-61.2c8.9-9.9 24-10.7 33.9-1.8zm0 160c9.9 8.9 10.7 24 1.8 33.9l-72 80c-4.4 4.9-10.6 7.8-17.2 7.9s-12.9-2.4-17.6-7L7 273c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l22.1 22.1 55.1-61.2c8.9-9.9 24-10.7 33.9-1.8zM224 96c0-17.7 14.3-32 32-32H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H256c-17.7 0-32-14.3-32-32zm0 160c0-17.7 14.3-32 32-32H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H256c-17.7 0-32-14.3-32-32zM160 416c0-17.7 14.3-32 32-32H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H192c-17.7 0-32-14.3-32-32zM48 368a48 48 0 1 1 0 96 48 48 0 1 1 0-96z" />
-								</svg>
-								Définition des besoins fonctionnels et spécifications techniques
-							</li>
-							<li >
-								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="width: 20px; vertical-align: middle; margin-right: 10px;">
-									<path fill="#ffffff" d="M192 104.8c0-9.2-5.8-17.3-13.2-22.8C167.2 73.3 160 61.3 160 48c0-26.5 28.7-48 64-48s64 21.5 64 48c0 13.3-7.2 25.3-18.8 34c-7.4 5.5-13.2 13.6-13.2 22.8c0 12.8 10.4 23.2 23.2 23.2H336c26.5 0 48 21.5 48 48v56.8c0 12.8 10.4 23.2 23.2 23.2c9.2 0 17.3-5.8 22.8-13.2c8.7-11.6 20.7-18.8 34-18.8c26.5 0 48 28.7 48 64s-21.5 64-48 64c-13.3 0-25.3-7.2-34-18.8c-5.5-7.4-13.6-13.2-22.8-13.2c-12.8 0-23.2 10.4-23.2 23.2V464c0 26.5-21.5 48-48 48H279.2c-12.8 0-23.2-10.4-23.2-23.2c0-9.2 5.8-17.3 13.2-22.8c11.6-8.7 18.8-20.7 18.8-34c0-26.5-28.7-48-64-48s-64 21.5-64 48c0 13.3 7.2 25.3 18.8 34c7.4 5.5 13.2 13.6 13.2 22.8c0 12.8-10.4 23.2-23.2 23.2H48c-26.5 0-48-21.5-48-48V343.2C0 330.4 10.4 320 23.2 320c9.2 0 17.3 5.8 22.8 13.2C54.7 344.8 66.7 352 80 352c26.5 0 48-28.7 48-64s-21.5-64-48-64c-13.3 0-25.3 7.2-34 18.8C40.5 250.2 32.4 256 23.2 256C10.4 256 0 245.6 0 232.8V176c0-26.5 21.5-48 48-48H168.8c12.8 0 23.2-10.4 23.2-23.2z"/>
-								</svg>
-								Structuration du projet en modules indépendants
-							</li>
-						</ul>
-					</div>
-					<div class="column fragment">
-						<h3 style="font-size: 0.7em;">Comparaison avec les projets passés</h3>
-						<ul>
-							<li style="margin-bottom: 15px;">
-								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="width: 20px; vertical-align: middle; margin-right: 10px;">
-									<path fill="#ffffff" d="M185.7 268.1h76.2l-38.1-91.6-38.1 91.6zM223.8 32L16 106.4l31.8 275.7 176 97.9 176-97.9 31.8-275.7zM354 373.8h-48.6l-26.2-65.4H168.6l-26.2 65.4H93.7L223.8 81.5z"/>
-								</svg>
-								Compréhension approfondie des frameworks modernes (ex. : Angular)
-							</li>
-							<li>
-								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" style="width: 20px; vertical-align: middle; margin-right: 10px;">
-									<path fill="#ffffff" d="M64 0C28.7 0 0 28.7 0 64V352c0 35.3 28.7 64 64 64H240l-10.7 32H160c-17.7 0-32 14.3-32 32s14.3 32 32 32H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H346.7L336 416H512c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H64zM512 64V352H64V64H512z"/>
-								</svg>
-								Création d'applications interactives et performantes
-							</li>
-						</ul>
-					</div>
-				</div>
-			</section>
+            <section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+                <h2 style="font-size: 1em">Développement de l'application ERP : Progression des compétences</h2>
+                <div class="columns">
+                    <div class="column fragment">
+                        <h3 style="font-size: 0.7em;">Processus de développement</h3>
+                        <ul>
+                            <li style="margin-bottom: 15px;">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                                     style="width: 20px; vertical-align: middle; margin-right: 10px;">
+                                    <path fill="#ffffff"
+                                          d="M152.1 38.2c9.9 8.9 10.7 24 1.8 33.9l-72 80c-4.4 4.9-10.6 7.8-17.2 7.9s-12.9-2.4-17.6-7L7 113C-2.3 103.6-2.3 88.4 7 79s24.6-9.4 33.9 0l22.1 22.1 55.1-61.2c8.9-9.9 24-10.7 33.9-1.8zm0 160c9.9 8.9 10.7 24 1.8 33.9l-72 80c-4.4 4.9-10.6 7.8-17.2 7.9s-12.9-2.4-17.6-7L7 273c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l22.1 22.1 55.1-61.2c8.9-9.9 24-10.7 33.9-1.8zM224 96c0-17.7 14.3-32 32-32H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H256c-17.7 0-32-14.3-32-32zm0 160c0-17.7 14.3-32 32-32H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H256c-17.7 0-32-14.3-32-32zM160 416c0-17.7 14.3-32 32-32H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H192c-17.7 0-32-14.3-32-32zM48 368a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/>
+                                </svg>
+                                Définition des besoins fonctionnels et spécifications techniques
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                                     style="width: 20px; vertical-align: middle; margin-right: 10px;">
+                                    <path fill="#ffffff"
+                                          d="M192 104.8c0-9.2-5.8-17.3-13.2-22.8C167.2 73.3 160 61.3 160 48c0-26.5 28.7-48 64-48s64 21.5 64 48c0 13.3-7.2 25.3-18.8 34c-7.4 5.5-13.2 13.6-13.2 22.8c0 12.8 10.4 23.2 23.2 23.2H336c26.5 0 48 21.5 48 48v56.8c0 12.8 10.4 23.2 23.2 23.2c9.2 0 17.3-5.8 22.8-13.2c8.7-11.6 20.7-18.8 34-18.8c26.5 0 48 28.7 48 64s-21.5 64-48 64c-13.3 0-25.3-7.2-34-18.8c-5.5-7.4-13.6-13.2-22.8-13.2c-12.8 0-23.2 10.4-23.2 23.2V464c0 26.5-21.5 48-48 48H279.2c-12.8 0-23.2-10.4-23.2-23.2c0-9.2 5.8-17.3 13.2-22.8c11.6-8.7 18.8-20.7 18.8-34c0-26.5-28.7-48-64-48s-64 21.5-64 48c0 13.3 7.2 25.3 18.8 34c7.4 5.5 13.2 13.6 13.2 22.8c0 12.8-10.4 23.2-23.2 23.2H48c-26.5 0-48-21.5-48-48V343.2C0 330.4 10.4 320 23.2 320c9.2 0 17.3 5.8 22.8 13.2C54.7 344.8 66.7 352 80 352c26.5 0 48-28.7 48-64s-21.5-64-48-64c-13.3 0-25.3 7.2-34 18.8C40.5 250.2 32.4 256 23.2 256C10.4 256 0 245.6 0 232.8V176c0-26.5 21.5-48 48-48H168.8c12.8 0 23.2-10.4 23.2-23.2z"/>
+                                </svg>
+                                Structuration du projet en modules indépendants
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="column fragment">
+                        <h3 style="font-size: 0.7em;">Comparaison avec les projets passés</h3>
+                        <ul>
+                            <li style="margin-bottom: 15px;">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+                                     style="width: 20px; vertical-align: middle; margin-right: 10px;">
+                                    <path fill="#ffffff"
+                                          d="M185.7 268.1h76.2l-38.1-91.6-38.1 91.6zM223.8 32L16 106.4l31.8 275.7 176 97.9 176-97.9 31.8-275.7zM354 373.8h-48.6l-26.2-65.4H168.6l-26.2 65.4H93.7L223.8 81.5z"/>
+                                </svg>
+                                Compréhension approfondie des frameworks modernes (ex. : Angular)
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"
+                                     style="width: 20px; vertical-align: middle; margin-right: 10px;">
+                                    <path fill="#ffffff"
+                                          d="M64 0C28.7 0 0 28.7 0 64V352c0 35.3 28.7 64 64 64H240l-10.7 32H160c-17.7 0-32 14.3-32 32s14.3 32 32 32H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H346.7L336 416H512c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H64zM512 64V352H64V64H512z"/>
+                                </svg>
+                                Création d'applications interactives et performantes
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="r-hstack justify-center">
+                    <div data-id="box1"
+                         style="background: #999; width: 15px; height: 15px; margin: 10px; border-radius: 100px;"></div>
+                    <div data-id="box2"
+                         style="background: #999; width: 15px; height: 15px; margin: 10px; border-radius: 100px;"></div>
+                    <div data-id="box3"
+                         style="background: #999; width: 15px; height: 15px; margin: 10px; border-radius: 100px;"></div>
+                </div>
+            </section>
 
 
-			<section>Mise en production : Evolution des compétences</section>
-			<section>Améliorations pour l'avenir</section>
-		</section>
-		<section>
-			<section>Compétence 2 - Optimiser</section>
-			<section>Introduction</section>
-			<section>Description initiale du problème</section>
-			<section data-auto-animate>
-				<h2 data-id="code-title">With Animations</h2>
-				<pre data-id="code-animation"><code class="hljs sql" data-trim data-line-numbers="|5-9|18-19,26|32-41">
+            <section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+                <h2 style="font-size: 1.2em">Mise en production : Evolution des compétences</h2>
+                <div class="timeline r-hstack justify-center" style="display: flex; gap: 20px">
+                    <div class="timeline-event">
+                        <div class="bubble" data-id="box1" data-auto-animate-delay="0">
+                            <h3 style="color: #002b36">Avant</h3>
+                            <p>Transferts FTP simples et configurations minimales</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event">
+                        <div class="bubble" data-id="box2" data-auto-animate-delay="0">
+                            <h3 style="color: #002b36">Processus</h3>
+                            <p>Gestion du déploiement manuel avec procédures rigoureuses</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-event">
+                        <div class="bubble" data-id="box3" data-auto-animate-delay="0">
+                            <h3 style="color: #002b36">Maintenant</h3>
+                            <p>Importance des procédures de déploiement structurées</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>Améliorations pour l'avenir</section>
+        </section>
+        <section>
+            <section>Compétence 2 - Optimiser</section>
+            <section>Introduction</section>
+            <section>Description initiale du problème</section>
+            <section data-auto-animate>
+                <h3 style="font-size: 1.2em" data-id="code-title">Processus d'optimisation</h3>
+                <pre data-id="code-animation"><code class="hljs sql" data-trim data-line-numbers="|5-9|18-19,26|32-41">
 						SELECT p.id_product, p.id_product_attribute, pp.nom
 						FROM erp_produit_prod_presta p
 							INNER JOIN erp_produit_prod pp ON (p.id_produit_prod = pp.id_produit_prod)
@@ -230,23 +313,21 @@
 						 vente ON vente.product_id = eppp.id_product
 						ORDER BY res desc;
 				</code></pre>
-			</section>
-			<section>Processus d'optimisation</section>
+            </section>
 
 
-
-			<section>Résultats obtenus</section>
-			<section>Conclusion</section>
-		</section>
-		<section>
-			<section>Compétence 6 - Collaborer</section>
-			<section>Introduction</section>
-			<section>Objectifs du projet ERP</section>
-			<section>Processus de conduite du changement</section>
-			<section>Résultats obtenus et retour d'expérience</section>
-			<section>Conclusion</section>
-		</section>
-	</div>
+            <section>Résultats obtenus</section>
+            <section>Conclusion</section>
+        </section>
+        <section>
+            <section>Compétence 6 - Collaborer</section>
+            <section>Introduction</section>
+            <section>Objectifs du projet ERP</section>
+            <section>Processus de conduite du changement</section>
+            <section>Résultats obtenus et retour d'expérience</section>
+            <section>Conclusion</section>
+        </section>
+    </div>
 </div>
 
 <script src="dist/reveal.js"></script>
@@ -254,13 +335,13 @@
 <script src="plugin/markdown/markdown.js"></script>
 <script src="plugin/highlight/highlight.js"></script>
 <script>
-	Reveal.initialize({
-		hash: true,
-		slideNumber: true,
+    Reveal.initialize({
+        hash: true,
+        slideNumber: true,
 
-		// Learn about plugins: https://revealjs.com/plugins/
-		plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-	});
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+    });
 </script>
 </body>
 </html>
