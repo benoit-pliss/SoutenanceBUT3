@@ -57,6 +57,23 @@
             transform: rotate(90deg);
         }
 
+        .infographic {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .infographic-section {
+            background: #f9f9f9;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px 0;
+            width: 80%;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
         pre code {
             white-space: pre-wrap;
             word-wrap: break-word;
@@ -180,7 +197,7 @@
             <section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
                 <h2 style="font-size: 1em">Développement de l'application ERP : Progression des compétences</h2>
                 <div class="columns">
-                    <div class="column fragment">
+                    <div class="column fragment" data-fragment-index="1">
                         <h3 style="font-size: 0.7em;">Processus de développement</h3>
                         <ul>
                             <li style="margin-bottom: 15px;">
@@ -201,7 +218,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="column fragment">
+                    <div class="column fragment" data-fragment-index="2">
                         <h3 style="font-size: 0.7em;">Comparaison avec les projets passés</h3>
                         <ul>
                             <li style="margin-bottom: 15px;">
@@ -223,7 +240,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="r-hstack justify-center">
+                <div class="r-hstack justify-center fragment" data-fragment-index="2">
                     <div data-id="box1"
                          style="background: #999; width: 15px; height: 15px; margin: 10px; border-radius: 100px;"></div>
                     <div data-id="box2"
@@ -260,15 +277,85 @@
                 </div>
             </section>
 
-            <section>Améliorations pour l'avenir</section>
+            <section>
+                <h2 style="font-size: 1.2em">Améliorations pour l'avenir</h2>
+                <div class="columns">
+                    <div class="column">
+                        <h3 style="font-size: 1em">Intégration de pipelines CI/CD</h3>
+                        <ul>
+                            <li class="fragment" data-fragment-index="1">Automatisation du déploiement</li>
+                            <li class="fragment" data-fragment-index="1">Réduction des erreurs humaines</li>
+                            <li class="fragment" data-fragment-index="1">Accélération des mises à jour</li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <h3 style="font-size: 1em">Lien avec Kubernetes</h3>
+                        <ul>
+                            <li class="fragment" data-fragment-index="2">Utilisation pour orchestrer les déploiements</li>
+                            <li class="fragment" data-fragment-index="2">Module vu en cours</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
         </section>
+
+
         <section>
-            <section>Compétence 2 - Optimiser</section>
-            <section>Introduction</section>
-            <section>Description initiale du problème</section>
-            <section data-auto-animate>
-                <h3 style="font-size: 1.2em" data-id="code-title">Processus d'optimisation</h3>
-                <pre data-id="code-animation"><code class="hljs sql" data-trim data-line-numbers="|5-9|18-19,26|32-41">
+            <section>
+                <h1 style="font-size: 2em">
+                    Compétence 2 : Optimiser
+                </h1>
+
+                <h2 style="font-size: 1em">
+                    Niveau 3 : Analyser et optimiser des applications
+                </h2>
+
+                <h3 class="fragment" style="font-size: 0.7em; color: #e6792b">
+                    AC 1 Anticiper les résultats de diverses métriques (temps d’exécution, occupation mémoire, montée en charge...)
+                </h3>
+            </section>
+
+            <section>
+                <h2 style="color: #ecf0f1; font-size: 1.2em">Introduction : Anticiper les résultats des métriques</h2>
+                <div class="columns">
+                    <div class="column" style="background: #34495e; padding: 10px; height: 200px; border-radius: 10px; margin: 10px; box-shadow: 2px 2px 8px rgba(0,0,0,0.2);">
+                        <h3 style="color: #ecf0f1; font-size: 1em">Importance des métriques</h3>
+                        <ul>
+                            <li class="fragment" data-fragment-index="1" style="color: #ecf0f1;">Temps d’exécution</li>
+                            <li class="fragment" data-fragment-index="1" style="color: #ecf0f1;">Occupation mémoire</li>
+                            <li class="fragment" data-fragment-index="1" style="color: #ecf0f1;">Montée en charge</li>
+                        </ul>
+                    </div>
+                    <div class="column" style="background: #34495e; padding: 10px; height: 200px; border-radius: 10px; margin: 10px; box-shadow: 2px 2px 8px rgba(0,0,0,0.2);">
+                        <h3 style="color: #ecf0f1; font-size: 1em">Exemple concret</h3>
+                        <p class="fragment" data-fragment-index="2" style="color: #ecf0f1;">Optimisation d'une requête SQL dans l'application ERP</p>
+                    </div>
+                </div>
+            </section>
+
+            <section data-auto-animate data-background="examples/assets/pageStats.jpg" data-background-opacity="0.3">
+                <h2 data-id="titre-code" style="color: #ecf0f1; font-size: 1.2em">Description initiale du problème</h2>
+                <pre data-id="code-animation"><code class="hljs sql" data-trim data-line-numbers>
+						SELECT p.id_product, p.id_product_attribute, pp.nom
+						FROM erp_produit_prod_presta p
+							INNER JOIN erp_produit_prod pp ON (p.id_produit_prod = pp.id_produit_prod)
+							INNER JOIN od_order_detail od ON (od.id_order IN
+							(
+								SELECT id_order
+								FROM od_orders
+								WHERE invoice_date BETWEEN :date_debut AND :date_fin
+							)
+							   AND p.id_product_attribute = od.product_attribute_id AND p.id_product = od.product_id )
+							INNER JOIN od_orders o ON (o.id_order = od.id_order)
+							LEFT JOIN od_order_grossiste_data ogd ON (o.id_order = ogd.id_order) AND ogd.id_order IS NULL
+						WHERE o.invoice_number != 0
+						GROUP BY p.id_product, p.id_product_attribute;
+                </code></pre>
+            </section>
+
+            <section data-auto-animate data-background="examples/assets/pageStats.jpg" data-background-opacity="0.3">
+                <h2 data-id="titre-code" style="font-size: 1.2em">Processus d'optimisation</h2>
+                <pre data-id="code-animation"><code class="hljs sql" data-trim data-line-numbers="5-9|18-19,26|32-41">
 						SELECT p.id_product, p.id_product_attribute, pp.nom
 						FROM erp_produit_prod_presta p
 							INNER JOIN erp_produit_prod pp ON (p.id_produit_prod = pp.id_produit_prod)
@@ -315,9 +402,19 @@
 				</code></pre>
             </section>
 
-
-            <section>Résultats obtenus</section>
-            <section>Conclusion</section>
+            <section>
+                <h2 style="font-size: 1.2em">Résultats obtenus</h2>
+                <div class="infographic">
+                    <div class="infographic-section fragment">
+                        <h3 style="font-size: 1em; color: #002b36">Améliorations de la performance</h3>
+                        <p>Le temps d'exécution de la requête est passé de 1 minute et 0.72 secondes à seulement 429 ms. Cela a considérablement amélioré la réactivité de l'application ERP.</p>
+                    </div>
+                    <div class="infographic-section fragment">
+                        <h3 style="font-size: 1em; color: #002b36">Impact sur l'application et les utilisateurs</h3>
+                        <p>Les utilisateurs peuvent maintenant obtenir les rapports de vente quasi instantanément, ce qui a amélioré l'efficacité opérationnelle et la satisfaction des utilisateurs.</p>
+                    </div>
+                </div>
+            </section>
         </section>
         <section>
             <section>Compétence 6 - Collaborer</section>
