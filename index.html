@@ -417,12 +417,116 @@
             </section>
         </section>
         <section>
-            <section>Compétence 6 - Collaborer</section>
-            <section>Introduction</section>
-            <section>Objectifs du projet ERP</section>
-            <section>Processus de conduite du changement</section>
-            <section>Résultats obtenus et retour d'expérience</section>
-            <section>Conclusion</section>
+            <section>
+                <h1 style="font-size: 2em">
+                    Compétence 6 : Collaborer
+                </h1>
+
+                <h2 style="font-size: 1em">
+                    Niveau 3 : Manager une équipe informatique
+                </h2>
+
+                <h3 class="fragment" style="font-size: 0.7em; color: #e6792b">
+                    AC 3 Guider la conduite du changement informatique au sein d’une organisation
+                </h3>
+            </section>
+
+            <section>
+                <h2 style="font-size: 1.2em">Objectifs du projet ERP</h2>
+                <div class="infographic">
+                    <div class="infographic-section fragment">
+                        <h3 style="font-size: 1em; color: #002b36">But de l'ERP</h3>
+                        <ul>
+                            <li>Faciliter le travail des opérateurs sur les lignes de production.</li>
+                            <li>Améliorer la traçabilité des produits fabriqués.</li>
+                            <li>Centraliser les informations.</li>
+                            <li>Optimiser les processus de production.</li>
+                            <li>Assurer une meilleure qualité et conformité des produits.</li>
+                        </ul>
+                    </div>
+                    <div class="infographic-section fragment">
+                        <h3 style="font-size: 1em; color: #002b36">Impact attendu</h3>
+                        <ul>
+                            <li>Gestion plus efficace des tâches quotidiennes par les opérateurs.</li>
+                            <li>Réduction des erreurs humaines.</li>
+                            <li>Traçabilité complète des produits pour répondre aux exigences réglementaires.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section data-background-video="https://data.geez-production.com/interactionBOPROD.mov" data-background-opacity="0.3"
+                     data-background-video-loop data-background-video-muted>
+
+                <h2 style="font-size: 1.2em">Processus de conduite du changement</h2>
+                <div class="timeline" style="align-items: stretch; gap: 10px">
+                    <div class="timeline-section fragment infographic-section" >
+                        <h3 style="font-size: 1em; color: #002b36">Analyse des besoins et planification</h3>
+                        <p>Analyse des besoins des opérateurs et gestionnaires de production.</p>
+                    </div>
+                    <div class="timeline-section fragment infographic-section">
+                        <h3 style="font-size: 1em; color: #002b36">Implication des parties prenantes</h3>
+                        <p>Organisation d'ateliers et sessions de brainstorming avec les opérateurs.</p>
+                    </div>
+                    <div class="timeline-section fragment infographic-section">
+                        <h3 style="font-size: 1em; color: #002b36">Formation et support</h3>
+                        <p>Programme de formation avec sessions en groupe et supports personnalisés.</p>
+                    </div>
+                    <div class="timeline-section fragment infographic-section">
+                        <h3 style="font-size: 1em; color: #002b36">Phases de déploiement</h3>
+                        <p>Déploiement progressif en commençant par un groupe pilote.</p>
+                    </div>
+                    <div class="timeline-section fragment infographic-section">
+                        <h3 style="font-size: 1em; color: #002b36">Communication continue</h3>
+                        <p>Communication régulière avec les utilisateurs tout au long du projet.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2 style="font-size: 1.2em">Résultats obtenus et retour d'expérience</h2>
+                <div class="columns" style="align-items: stretch">
+                    <div class="column">
+                        <h3 style="font-size: 1em">Résultats concrets</h3>
+                        <ul>
+                            <li>L'ERP a été bien accueilli par les opérateurs.</li>
+                            <li>Simplification des processus et amélioration de la traçabilité.</li>
+                            <li>Réduction du temps de traitement des tâches de 20%.</li>
+                            <li>Diminution des erreurs de production de 15%.</li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <h3 style="font-size: 1em">Leçons apprises</h3>
+                        <ul>
+                            <li>Importance de l'implication active des utilisateurs.</li>
+                            <li>Nécessité d'une communication claire et d'une formation adéquate.</li>
+                            <li>Flexibilité et adaptation aux retours des utilisateurs.</li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <h3 style="font-size: 1em">Comparaison avec les compétences initiales</h3>
+                        <ul>
+                            <li>Transition des compétences théoriques à une expérience pratique.</li>
+                            <li>Apprentissage de la gestion des aspects humains et organisationnels du changement.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2 style="font-size: 1.2em">Conclusion</h2>
+                <div class="summary">
+                    <div class="summary-item fragment">
+                        <h3 style="font-size: 1em">Gestion du changement</h3>
+                    </div>
+                    <div class="summary-item fragment">
+                        <h3 style="font-size: 1em">Communication avec les parties prenantes</h3>
+                    </div>
+                    <div class="summary-item fragment">
+                        <h3 style="font-size: 1em">Formation des utilisateurs</h3>
+                    </div>
+                </div>
+            </section>
         </section>
     </div>
 </div>
@@ -438,6 +542,16 @@
 
         // Learn about plugins: https://revealjs.com/plugins/
         plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Sélectionne toutes les vidéos en arrière-plan
+        var backgroundVideos = document.querySelectorAll('[data-background-video] video');
+
+        // Change la vitesse de chaque vidéo x2
+        backgroundVideos.forEach(function(video) {
+            video.playbackRate = 2;
+        });
     });
 </script>
 </body>
